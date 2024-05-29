@@ -25,8 +25,8 @@
                   </h3>
                   <p class="card-text">Taille réelle : <%= searchedFigurine.size %> cm</p>
                   <p class="card-text"><%= searchedFigurine.description %></p>
-                  <p class="card-text">3
-                    Note moyenne : &#9733; &#9733; &#9733; &#9733; &#9734;
+                  <p class="card-text">
+                    Note moyenne : <%- star.repeat(noteTotal) + ' ' + starLess.repeat(5-noteTotal) %>
                     <br>
                     <a href="#" data-toggle="modal" data-target="#reviewsModal">Détails des avis</a>
                   </p>

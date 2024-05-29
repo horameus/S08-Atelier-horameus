@@ -25,9 +25,18 @@ const mainController = {
       if (!searchedFigurine){
         return next();
       }
+
       const star = "&#9733; ";
       const starLess = "&#9734; ";
-      res.render("article", { searchedFigurine, searchedReviews, star , starLess });
+
+      let noteTotal = 0;
+      searchedReviews.forEach((element) => {
+        noteTotal = noteTotal + element.note;
+      })
+      noteTotal = Math.floor(noteTotal/searchedReviews.length);
+      console.log(noteTotal);
+
+      res.render("article", { searchedFigurine, searchedReviews, star , starLess, noteTotal });
     } catch (error){
       res.status(500).send(`Erreur de notre coté : ${error}`);
     }

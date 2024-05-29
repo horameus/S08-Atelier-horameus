@@ -20,10 +20,9 @@ const dataMapper = {
          return result.rows;
     },
 
-    selectCategory : async (targetCartegory) => {
-        const sql = `SELECT * FROM figurine WHERE category = '${targetCartegory}'`;
+    selectCategory : async (targetCategory) => {
+        const sql = `SELECT * FROM figurine WHERE category = '${targetCategory}'`;
         const result = await client.query(sql);
-        console.log(result.rows);
         return result.rows;
    }
 
